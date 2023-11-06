@@ -1,0 +1,58 @@
+.body{
+    display: flex;
+}
+
+.hero-section,
+.form-section{
+    height: 100vh;
+}
+
+.hero-section{
+    width: 35vw
+}
+
+.form-section{
+    width: 65vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-section > div {
+    padding: 35px;
+}
+.form-header {
+    margin: 15px 0px;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+
+form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0px;
+}
+
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: max-content;
+}
+.fieldset-section{
+    display: flex;
+}
+
+fieldset *{
+    margin: 5px 0px;
+}
+
+label{
+    width: 150px;
+}
+
