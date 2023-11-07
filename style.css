@@ -6,6 +6,13 @@ body{
     margin: 0;
     padding: 0;
 }
+h2{
+    font-size: calc(16px + 0.5vw);
+}
+
+h3 {
+    font-size: calc(14px + 0.5vw);
+}
 .body{
     display: flex;
 }
