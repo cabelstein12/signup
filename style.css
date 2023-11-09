@@ -1,3 +1,19 @@
+@keyframes logo-fadein {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes slidein {
+    0%{
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    100%{
+        opacity: 1;
+        trasform: translateX(0%);
+    }
+}
+
 :root {
     font-family: Montserrat, sans-serif;
 }
@@ -32,7 +48,7 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: #e2dede2b;
+    background-color: #cecece2b;
 }
 
 .form-header {
@@ -44,18 +60,17 @@ h3 {
 }
 
 form {
+     animation: 1s ease-out 4s 1 slidein; 
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: max-content;
     padding: 20px 0px 20px 0px;
-    background-color: white;
-    box-shadow: 5px 5px 5px rgba(53, 53, 53, 0.119);
+
     border-radius: 10px;
 }
 
 form,
-.form-outputs,
 .form-header{
     padding-left: 5%;
 }
@@ -64,21 +79,26 @@ form,
     padding-right: 2%;
 }
 fieldset{
+    background-color: white;
+    box-shadow: 5px 5px 5px rgba(53, 53, 53, 0.119);
+    border-radius: 3px;
+    border: none;
+    padding-left: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+.fieldset{
     display: flex;
     /* flex-direction: column; */
     flex-wrap: wrap;
     width: 502px;
     height: max-content;
-    border: none;
-    border-radius: 3px;
-    padding-left: 0px;
-    margin: 0px;
+    overflow: hidden;
 }
+
 .fieldset-section{
     display: flex;
 }
-
-
 
 .prompt {
     padding-bottom: 10px;
@@ -90,7 +110,7 @@ fieldset{
 
 label{
     width: 150px;
-    padding: 6px 0px;
+    padding: 6px 3px;
 }
 
 input {
@@ -114,10 +134,20 @@ button{
     margin-top: 15px;
     width: 110px;
     height: 42px;
-    border: none;
+    border: solid rgba(165, 165, 165, 0.722) 2px;
     border-radius: 5px;
-    background-color: rgb(64 117 165);
+    background-color: rgb(58, 131, 199);
     color: #fcfcfc;
+}
+
+button:hover {
+    background-color: rgb(66, 147, 224);
+    transition: 0.1s;
+}
+
+button:active{
+    border:transparent;
+    
 }
 
 .form-outputs{
@@ -135,11 +165,12 @@ button{
 }
 
 img{
-    width: 100%;
     height: 100%;
+    width: 100%;
 }
 
 .page-title{
+    animation: 1s ease-in 0s 1 logo-fadein;
     position: absolute;
     top: 29%;
     left: 50%;
@@ -175,3 +206,29 @@ a{
 .log-in {
     color: black;
 }
+
+.log-in:hover{
+    color: rgb(99, 99, 99);
+    transition: 0.2s;
+}
+
+.inputs{
+    position: relative;
+}
+
+label{
+    position: absolute;
+    cursor: text;
+}
+
+input,
+label {
+    font-size: 1em;
+}
+
+input:focus + label { 
+    font-size: 0.75em;
+    transition: 0.2s linear;
+    top: -18%;
+}
+
