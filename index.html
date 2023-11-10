@@ -27,19 +27,19 @@
                     <div class="fieldset">
                         <h3 class="prompt">Let's Do This!</h3>
                         <div class="inputs">
-                            <input type="text" id="first_name" name="first_name" required maxlength="24">
-                            <label for="first_name">First Name</label>
+                            <input type="text" id="first_name" name="first_name" required>
+                            <label for="first_name" id="first_name_label">First Name</label>
                         </div>
                         <div class="inputs right-inputs">
-                            <input type="text" id="last_name" name="last_name" required maxlength="24">
-                            <label for="last_name">Last Name</label>
+                            <input type="text" id="last_name" name="last_name" required>
+                            <label for="last_name" id="last_name_label">Last Name</label>
                         </div>
                         <div class="inputs">
                             <input type="email" id="email" name="email" required>
-                            <label for="email">Email</label>
+                            <label for="email" id="email_label">Email</label>
                         </div>
                         <div class="inputs right-inputs">
-                            <input type="tel" id="phone_number" name="phone_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+                            <input type="tel" id="phone_number" name="phone_number" pattern="[0-9]{3}\s[0-9]{3}(\s|-)[0-9]{4}" minlength="10" oninvalid="this.setCustomValidity('Try something like: 780 123-1234')" oninput="this.setCustomValidity('')">
                             <label for="phone_number">Phone Number</label>
                         </div>
                         <div class="inputs">
@@ -53,13 +53,11 @@
                     </div>                  
                 </fieldset>
                 <div class="form-outputs">
-                <button type="submit" value="Submit">Submit</button>
+                <button type="submit" value="Submit" onclick="matchPassword()">Submit</button>
                 <div class="existing-users">Already have an account? <a href="" class="log-in">Log in</a></div>
             </div>
             </form>
             
-            
-
         </div>
     </div>
 </body>

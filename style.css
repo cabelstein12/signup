@@ -1,21 +1,31 @@
 @keyframes logo-fadein {
-    0% {opacity: 0;}
-    100% {opacity: 1;}
+    0% {opacity: 0;
+       
+    }
+    100% {opacity: 1;
+         
+    }
 }
 
 @keyframes slidein {
     0%{
+        visibility: hidden;
         opacity: 0;
-        transform: translateX(100%);
+        transform: translateX(50%);
     }
+    30%{ opacity: 0.25;}
+    
     100%{
+        visibility: visible;
         opacity: 1;
-        trasform: translateX(0%);
+        transform: translateX(0%);
     }
 }
 
 :root {
     font-family: Montserrat, sans-serif;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 body{
@@ -60,7 +70,6 @@ h3 {
 }
 
 form {
-     animation: 1s ease-out 4s 1 slidein; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -79,6 +88,7 @@ form,
     padding-right: 2%;
 }
 fieldset{
+    animation: 1100ms ease-out 0s 1 slidein; 
     background-color: white;
     box-shadow: 5px 5px 5px rgba(53, 53, 53, 0.119);
     border-radius: 3px;
@@ -138,6 +148,7 @@ button{
     border-radius: 5px;
     background-color: rgb(58, 131, 199);
     color: #fcfcfc;
+    padding: 0px;
 }
 
 button:hover {
@@ -170,7 +181,8 @@ img{
 }
 
 .page-title{
-    animation: 1s ease-in 0s 1 logo-fadein;
+    animation: logo-fadein 1s ease-in 2s forwards;
+    opacity: 0;
     position: absolute;
     top: 29%;
     left: 50%;
@@ -226,9 +238,5 @@ label {
     font-size: 1em;
 }
 
-input:focus + label { 
-    font-size: 0.75em;
-    transition: 0.2s linear;
-    top: -18%;
-}
+
 
